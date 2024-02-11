@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title> Square App by Kamal Sir </title>
+	<style>
+		* { font-size:40px; }
+		body { background-color: lightblue; }
+		.nav { background-color: black; }
+		.nav a { color:white; text-decoration:none; margin:30px;}
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("id_num");
+		
+			if (num.value == "")
+			{
+				alert("u did not enter number ");
+				num.focus();
+				return;
+			}
+
+			let n = parseFloat(num.value);
+			let r = n * n;
+			localStorage.setItem("res", r);
+			window.location.href = "result.html";
+		}
+	</script>
+</head>
+
+<body>
+<center>
+	<div class="nav">
+		<a href="index.html"> Home </a> 
+		<a href="about.html"> About </a> 
+	</div>
+	<h1> Square Finder App </h1>
+	<form onsubmit="find()">
+		<input type="number" step="any" id="id_num" placeholder="enter number " />
+		<br><br>
+		<input type="submit" value="Find Square" />
+	</form>
+	<script>
+		localStorage.removeItem("res");
+	</script>
+
+</center>
+</body>
+
+</html>

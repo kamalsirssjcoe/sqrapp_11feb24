@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title> Square App by Kamal Sir </title>
+	<style>
+		* { font-size:40px; }
+		body { background-color: lightblue; }
+		.nav { background-color: black; }
+		.nav a { color:white; text-decoration:none; margin:30px;}
+	</style>
+</head>
+
+<body>
+<center>
+	<div class="nav">
+		<a href="index.html"> Home </a> 
+		<a href="about.html"> About </a> 
+	</div>
+	<h1> Result Page </h1>
+	<h2 id="id_msg" />
+	<script>
+		let msg = document.getElementById("id_msg");
+		let res = localStorage.getItem("res");
+		if (res == null)
+		{
+			msg.innerHTML = "trying to act smart";
+			setTimeout( () => { window.location.href = "index.html"; } , 5000);
+		}
+		else
+		{
+			msg.innerHTML = res;
+		}
+	</script>
+	
+</center>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
